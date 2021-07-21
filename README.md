@@ -19,7 +19,7 @@ also requires opencv2.
 ```
 Go to test.py from LSB_steganography folder.
 Select an encription key for the ciper (line 22).
-Just start with the ide you use.
+Start with the ide you use.
 ```
 
 
