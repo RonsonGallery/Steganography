@@ -18,7 +18,10 @@ also requires opencv2.
 ## Running it
 ```
 Go to test.py from LSB_steganography folder.
-Select an encription key for the ciper (line 22).
+Select an encription key for the ciper (or leave the defualt line 22).
+Choose the hidden message (or leave the defualt line 23).
+Choose an image to embed and either add to the folder and input image name(or leave the defualt line 26).
+Rename the outcome images as you need.
 Start with the ide you use.
 ```
 
