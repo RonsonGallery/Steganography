@@ -49,10 +49,21 @@ if __name__ == "__main__":
     if not newImg is None:
         print("Stego image2 created.")
 
+    # getting image size
+    size1 = img.size
+    size2 = img2.size
+
+    # combining back the split images
+    new_image = Image.new('RGB', (2 * size1[0], size1[1]), (250, 250, 250))
+    new_image.paste(img, (0, 0))
+    new_image.paste(img2, (size1[0], 0))
+    new_image.save("merged_images.png", "PNG")
+    new_image.show()
+
     # decoding the encrypted message from the 2 halves
     print("Decoding...")
     rawMessage1 = LsbSteg.decodeLSB("stego_stars_background1.png")
-    print("Message1 before cipher decrypt:", rawMessage1)
+    # print("Message1 before cipher decrypt:", rawMessage1)
     message = CaesarCipher.decrypt(rawMessage1, key)
     # print("Final message from 1: ", message)
     rawMessage2 = LsbSteg.decodeLSB("stego_stars_background2.png")
