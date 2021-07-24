@@ -21,8 +21,9 @@ def crop(filename, number):
 if __name__ == "__main__":
     # CaesarCipher keys
     key = 5
-    key2 = 8
-    message = "I am a message"
+    key2 = 3
+    message = input("enter hidden message: ")
+    # message = "I am a message"
 
     # splitting the image into 2
     crop("BW-using-curves.jpg", 2)
@@ -66,13 +67,13 @@ if __name__ == "__main__":
     # decoding the encrypted message from the 2 halves
     print("Decoding...")
     rawMessage1 = LsbSteg.decodeLSB("stego_BW-using-curves1.png")
-    # print("Message1 before cipher decrypt:", rawMessage1)
+    print("Message1 before cipher decrypt:", rawMessage1)
     message = CaesarCipher.decrypt(rawMessage1, key)
-    # print("Final message from 1: ", message)
+    print("Final message from 1: ", message)
     rawMessage2 = LsbSteg.decodeLSB("stego_BW-using-curves2.png")
-    # print("Message2 before cipher decrypt:", rawMessage2)
+    print("Message2 before cipher decrypt:", rawMessage2)
     message2 = CaesarCipher.decrypt(rawMessage2, key2)
-    # print("Final message from 2: ", message2)
+    print("Final message from 2: ", message2)
 
     # check if both halfs returned the same message
     if message == message2:
