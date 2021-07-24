@@ -14,6 +14,7 @@ pip install pillow/pip install pil
 ```
 
 also requires opencv2.
+in pycharm go to settings -> Project: -> python interpreter -> opencv-contrib-python
 
 ## Running it
 ```
